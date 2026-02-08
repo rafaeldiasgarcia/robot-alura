@@ -1,9 +1,5 @@
 *** Settings ***
-Library          SeleniumLibrary
-Library          FakerLibrary    locale=pt_BR
-Resource         setup_teardown.robot
-Test Setup       Dado que eu acesse o Organo
-Test Teardown    Fechar o navegador
+Resource         ../main.robot
 
 *** Variables ***
 ${URL}                    
@@ -20,21 +16,6 @@ ${BOTAO_CARD}             id:form-botao
 ...       //option[contains(.,'UX e Design')]
 ...       //option[contains(.,'Mobile')]
 ...       //option[contains(.,'Inovação')]
-
-*** Test Cases ***
-Verificar se ao preencehr os cmapos do formulario corretamente os dados são enseridos na lista e se um novo cardao é criado no time esperado
-    Dado que eu preencha os campos do formulario
-    E clique no botao de criar card
-    Entao identificar o card no time esperado
-
-Verificar se é possivel criar mais de uma card se preenchermos os campos do formulario corretamente
-    Dado que eu preencha os campos do formulario
-    E clique no botao de criar card
-    Então indentificar 3 cards no time esperado
-
-Verificar se é possivel criar um card para cada time disponivel se preenchermos os campos do formulario corretamente
-    Dado que eu preencha os campos do formulario
-    Então criar e indentificar um card para cada time disponivel
 
 *** Keywords ***
 Dado que eu preencha os campos do formulario
@@ -67,4 +48,11 @@ Então criar e indentificar um card para cada time disponivel
         E clique no botao de criar card
     END
     Sleep    10s
-    
+
+Dado que eu clcique no botão criar card
+    Click Element    ${BOTAO_CARD}
+
+Então sistema deve apresentar mensagem de campo obrigatório
+    Element Should Be Visible    id:form-nome-erro
+    Element Should Be Visible    id:form-cargo-erro
+    Element Should Be Visible    id:form-times-erro
