@@ -33,7 +33,7 @@ E preencha os campos do formulario
     Input Text                   ${CAMPO_CARGO}          Desenvolvedor
     Input Text                   ${CAMPO_IMAGEM}         https://picsum.photos/200/300
     Click Element                ${CAMPO_TIME}
-    Click Element                ${OPCAO_PROGRAMACAO}    .
+    Click Element                ${OPCAO_PROGRAMACAO}    
 
 E cique no botao de criar card
     Click Element                ${BOTAO_CARD}
