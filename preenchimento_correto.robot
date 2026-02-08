@@ -22,7 +22,7 @@ ${OPCAO_INOVACAO}         //option[contains(.,'Inovação e Gestão')]
 *** Test Cases ***
 Verificar se ao preencehr os cmapos do formulario corretamente os dados são enseridos na lista e se um novo cardao é criado no time esperado
     Dado que eu preencha os campos do formulario
-    E cique no botao de criar card
+    E clique no botao de criar card
     Entao identificar o card no time esperado
 
 *** Keywords ***
@@ -34,7 +34,7 @@ Dado que eu preencha os campos do formulario
     Click Element                ${CAMPO_TIME}
     Click Element                ${OPCAO_PROGRAMACAO}    
 
-E cique no botao de criar card
+E clique no botao de criar card
     Click Element                ${BOTAO_CARD}
 
 Entao identificar o card no time esperado
