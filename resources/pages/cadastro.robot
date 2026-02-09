@@ -18,7 +18,7 @@ ${BOTAO_CARD}             id:form-botao
 ...       //option[contains(.,'Inovação')]
 
 *** Keywords ***
-Dado que eu preencha os campos do formulario
+Dado que eu preencha os campos do formulário
     ${Nome}             FakerLibrary.First Name
     Input Text          ${CAMPO_NOME}        ${Nome}
     ${Cargo}            FakerLibrary.Job
@@ -28,24 +28,24 @@ Dado que eu preencha os campos do formulario
     Click Element       ${CAMPO_TIME}
     Click Element       ${selecionar_times}[0]   
 
-E clique no botao de criar card
+E clique no botão de criar card
     Click Element                ${BOTAO_CARD}
 
-Entao identificar o card no time esperado
+Então identificar o card no time esperado
     Element Should Be Visible    class:colaborador
 
-Então indentificar 3 cards no time esperado
+Então identificar 3 cards no time esperado
     FOR    ${i}    IN RANGE   1    3
-        Dado que eu preencha os campos do formulario
-        E clique no botao de criar card
+        Dado que eu preencha os campos do formulário
+        E clique no botão de criar card
     END
     Sleep    10s
 
-Então criar e indentificar um card para cada time disponivel
+Então criar e identificar um card para cada time disponível
     FOR    ${index}    ${element}    IN ENUMERATE    @{selecionar_times}
-        Dado que eu preencha os campos do formulario
+        Dado que eu preencha os campos do formulário
         Click Element            ${element}
-        E clique no botao de criar card
+        E clique no botão de criar card
     END
     Sleep    10s
 

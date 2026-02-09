@@ -1,19 +1,19 @@
 *** Settings ***
-Resource         ../resources/main.robot
-Test Setup       Dado que eu acesse o Organo
-Test Teardown    Fechar o navegador
+Resource          ../resources/main.robot
+Test Setup        Dado que eu acesse o Organo
+Test Teardown     Fechar o navegador
 
 *** Test Cases ***
-Verificar se ao preencehr os cmapos do formulario corretamente os dados são enseridos na lista e se um novo cardao é criado no time esperado
-    Dado que eu preencha os campos do formulario
-    E clique no botao de criar card
-    Entao identificar o card no time esperado
+Verificar se ao preencher os campos do formulário corretamente os dados são inseridos na lista e se um novo card é criado no time esperado
+    Dado que eu preencha os campos do formulário
+    E clique no botão de criar card
+    Então identificar o card no time esperado
 
-Verificar se é possivel criar mais de uma card se preenchermos os campos do formulario corretamente
-    Dado que eu preencha os campos do formulario
-    E clique no botao de criar card
-    Então indentificar 3 cards no time esperado
+Verificar se é possível criar mais de um card ao preencher os campos do formulário corretamente
+    Dado que eu preencha os campos do formulário
+    E clique no botão de criar card
+    Então identificar 3 cards no time esperado
 
-Verificar se é possivel criar um card para cada time disponivel se preenchermos os campos do formulario corretamente
-    Dado que eu preencha os campos do formulario
-    Então criar e indentificar um card para cada time disponivel
+Verificar se é possível criar um card para cada time disponível ao preencher os campos do formulário corretamente
+    Dado que eu preencha os campos do formulário
+    Então criar e identificar um card para cada time disponível
